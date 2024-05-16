@@ -1,0 +1,22 @@
+[book]
+authors = ["moriyoshi-kasuga"]
+language = "en"
+multilingual = false
+src = "src"
+title = "pytour"
+
+[preprocessor]
+
+[preprocessor.extras]
+command = "python3 extra/main.py"
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.html.playground]
+runnable = false
