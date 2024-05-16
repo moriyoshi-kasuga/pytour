@@ -1,5 +1,6 @@
 # Summary
 
-- [Chapter 1](./charpter1/chapter_1.md)
-  - [in 1.1](./chapter-1/chapter_1_1.md)
-- [Chapter 2](./chapter_2.md)
+[Welcome to the pytour](./pytour.md)
+- [introduction](./1.md)
+  - [first inner](./1.1.md)
+  - [second inner](./1.2.md)

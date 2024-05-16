@@ -1,22 +1,48 @@
 [book]
+title = "pytour"
 authors = ["moriyoshi-kasuga"]
 language = "en"
 multilingual = false
 src = "src"
-title = "pytour"
 
 [preprocessor]
 
-[preprocessor.extras]
-command = "python3 extra/main.py"
+[preprocessor.pytour]
+command = "mdbook-pytour"
+before = ["admonish", "mermaid"]
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2"    # do not edit: managed by `mdbook-admonish install`
+after = ["links"]
+on_failure = "bail"
+render_mode = "strip"
+
 [output]
 
 [output.html]
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
+mathjax-support = true
+additional-css = ["theme/custom.css", "./theme/mdbook-admonish.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js", "theme/custom.js"]
+git-repository-url = "https://github.com/moriyoshi-kasuga/pytour/tree/main/book"
 
 [output.html.playground]
 runnable = false
+
+[output.html.code.hidelines]
+python = "~"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.print]
+enable = false
