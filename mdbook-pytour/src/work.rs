@@ -38,7 +38,7 @@ impl Default for WorkConfig {
     fn default() -> Self {
         Self {
             question_title: question_title_default(),
-            collapsible: true,
+            collapsible: collapsible_default(),
             collapsible_title: collapsible_title_default(),
         }
     }
