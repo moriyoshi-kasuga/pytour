@@ -26,7 +26,13 @@ render_mode = "strip"
 [output.html]
 mathjax-support = true
 additional-css = ["theme/custom.css", "./theme/mdbook-admonish.css"]
-additional-js = ["mermaid.min.js", "mermaid-init.js", "theme/custom.js"]
+additional-js = [
+    "mermaid.min.js",
+    "mermaid-init.js",
+    "theme/custom.js",
+    "theme/fzf.umd.js",
+    "theme/elasticlunr.js",
+]
 git-repository-url = "https://github.com/moriyoshi-kasuga/pytour/tree/main/book"
 
 [output.html.playground]
