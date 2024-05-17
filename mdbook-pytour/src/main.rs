@@ -1,11 +1,10 @@
-mod pytour;
-
-use crate::pytour::Pytour;
 use clap::{crate_name, crate_version, Arg, ArgMatches, Command};
 use mdbook::{
+    book::Book,
     errors::Error,
-    preprocess::{CmdPreprocessor, Preprocessor},
+    preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext},
 };
+use mdbook_pytour::{embed::Embed, work::Work};
 use std::{io, process};
 
 pub fn make_app() -> Command {
@@ -19,11 +18,37 @@ pub fn make_app() -> Command {
         )
 }
 
+pub struct Pytour;
+
+impl Preprocessor for Pytour {
+    fn name(&self) -> &str {
+        "pytour-preprocessor"
+    }
+
+    fn supports_renderer(&self, renderer: &str) -> bool {
+        renderer != "not-supported"
+    }
+
+    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> mdbook::errors::Result<Book> {
+        let root = ctx.root.join(&ctx.config.book.src);
+
+        let embed = Embed::default();
+        let work = Work::new(root);
+        book.for_each_mut(|item| {
+            if let mdbook::book::BookItem::Chapter(chap) = item {
+                embed.run(chap);
+                work.run(chap);
+            };
+        });
+        Ok(book)
+    }
+}
+
 fn main() {
     let matches = make_app().get_matches();
 
     // Users will want to construct their own preprocessor here
-    let preprocessor = Pytour::new();
+    let preprocessor = Pytour;
 
     if let Some(sub_args) = matches.subcommand_matches("supports") {
         handle_supports(&preprocessor, sub_args);
