@@ -56,8 +56,8 @@ impl Work {
         file.and_then(|mut file| {
             let mut s = String::new();
             file.read_to_string(&mut s)?;
-            serde_yaml::from_str(&s)
-                .map_err(|_| Error::new(std::io::ErrorKind::InvalidData, "YAML parsing error"))
+            toml::from_str(&s)
+                .map_err(|_| Error::new(std::io::ErrorKind::InvalidData, "Toml parsing error"))
         })
         .unwrap_or_default()
     }
@@ -72,7 +72,7 @@ impl Work {
                     work_path,
                     caps.name("path").unwrap().as_str().trim()
                 );
-                let config = self.load_config(File::open(format!("{}/config.yml", path)));
+                let config = self.load_config(File::open(format!("{}/config.toml", path)));
 
                 format!(
                     r#"

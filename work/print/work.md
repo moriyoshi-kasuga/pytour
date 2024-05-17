@@ -1,1 +1,1 @@
-`Hello World` と出力してください
+`Hello, World!` と出力してください
