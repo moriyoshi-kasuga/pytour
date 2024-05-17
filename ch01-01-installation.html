@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>The Python Programming Tour - pytour</title>
+        <title>インストール - pytour</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pytour.html" class="active">The Python Programming Tour</a></li><li class="chapter-item expanded affix "><a href="foreword.html">まえがき</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">はじめに</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> 事始め</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> インストール</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pytour.html">The Python Programming Tour</a></li><li class="chapter-item expanded affix "><a href="foreword.html">まえがき</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">はじめに</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> 事始め</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html" class="active"><strong aria-hidden="true">1.1.</strong> インストール</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,18 +176,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-python-programming-tour"><a class="header" href="#the-python-programming-tour">The Python Programming Tour</a></h1>
-<p><strong>著: <a href="https://github.com/moriyoshi-kasuga">moriyoshi-kasuga</a></strong></p>
-<p>この本ではPython 3 が使われていることを前提としています。
-Pythonをインストールしたりアップデートするには <a href="./ch01-01-installation.html">第一章の「インストール」</a> 節をよんでください</p>
-<p>この本は <a href="https://github.com/moriyoshi-kasuga/pytour/tree/main/book">https://github.com/moriyoshi-kasuga/pytour/tree/main/book</a> で公開されています</p>
+                        <h1 id="インストール"><a class="header" href="#インストール">インストール</a></h1>
+<p>最初の手順は、Pythonをインストールすることです。この本では <code>Homebrew</code> を使います。</p>
+<blockquote>
+<h3 id="コマンドラインの記法"><a class="header" href="#コマンドラインの記法">コマンドラインの記法</a></h3>
+<p>この章及び、本を通して、端末で使用するなんらかのコマンドを示すことがあります。読者が入力するべき行は、
+全て<code>$</code>で始まります。ただし、読者が<code>$</code>文字を入力する必要はありません; これは各コマンドの開始を示しているだけです。
+<code>$</code>で始まらない行は、典型的には直前のコマンドの出力を示します。</p>
+</blockquote>
+<h2 id="mac-に-homebrew-と-python-をインストール"><a class="header" href="#mac-に-homebrew-と-python-をインストール">mac に Homebrew と Python をインストール</a></h2>
+<p>ターミナルを開いて、以下のコマンドを入力することで簡単にインストールができます</p>
+<pre><code class="language-shell">$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/moriyoshi-kasuga/install/HEAD/book/bin/install_python.sh)"
+</code></pre>
+<p>このコマンドはスクリプトを入手して、<code>homebrew</code> のインストールを開始します。
+パスワードを求められる可能性があります。インストールがうまくいけば以下の行が出現するでしょう！</p>
+<pre><code class="language-text">HomeBrew and Python is installed now. Great!
+</code></pre>
+<p>これによりもう <code>Python</code> がインストールされました。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch01-00-getting-started.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="foreword.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="ch01-02-hello-world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -197,8 +212,11 @@ Pythonをインストールしたりアップデートするには <a href="./ch
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch01-00-getting-started.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="foreword.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="ch01-02-hello-world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

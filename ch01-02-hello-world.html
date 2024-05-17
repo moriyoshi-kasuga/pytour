@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>first inner - pytour</title>
+        <title>Hello, World! - pytour</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pytour.html">Welcome to the pytour</a></li><li class="chapter-item expanded "><a href="1.html"><strong aria-hidden="true">1.</strong> introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1.1.html" class="active"><strong aria-hidden="true">1.1.</strong> first inner</a></li><li class="chapter-item expanded "><a href="1.2.html"><strong aria-hidden="true">1.2.</strong> second inner</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pytour.html">The Python Programming Tour</a></li><li class="chapter-item expanded affix "><a href="foreword.html">まえがき</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">はじめに</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> 事始め</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> インストール</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html" class="active"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,19 +176,59 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="11"><a class="header" href="#11">1.1</a></h1>
+                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello, World</a></h1>
+<p>Pythonをインストールしたので、さっそく最初のPythonプログラムを書いてみましょう。
+新しい言語を学ぶ際に、 <code>Hello, World!</code> というテキストを画面に出力する小さなプログラムを書くことは伝統的なことなので、
+ここでも同じようにしましょう!</p>
+<h2 id="pythonのディレクトリを作成する"><a class="header" href="#pythonのディレクトリを作成する">Pythonのディレクトリを作成する</a></h2>
+<p>Pythonコードを格闘するディレクトリを作ることから始めましょう。
+Desktopでもどこでも構いませんこの本の練習のためにどこかに
+ディレクトリを作成してPythonコードをすべてそこに保管することを推奨します。</p>
+<h2 id="pythonコードを書いて走らせる"><a class="header" href="#pythonコードを書いて走らせる">Pythonコードを書いて走らせる</a></h2>
+<p>次にそのディレクトリ内で <code>main.py</code> という名前のファイルを作成します。
+Pythonのファイルは常に <code>.py</code> という拡張子で終わります。</p>
+<p>さて、作ったばかりの <code>main.py</code> ファイルを開き、以下のコードを入力してください</p>
+<div id="admonition-hello-worldという文字を画面に出力します" class="admonition admonish-question">
+<div class="admonition-title">
+<p><code>Hello, World!</code>という文字を画面に出力します</p>
+<p><a class="admonition-anchor-link" href="#admonition-hello-worldという文字を画面に出力します"></a></p>
+</div>
+<div>
+<pre><code class="language-python">print("Hello, World!")
+</code></pre>
+</div>
+</div>
+<p>そしたらターミナルに以下のコマンドを打ってPythonプログラムを実行しましょう</p>
+<pre><code class="language-shell">$ python3 main.py
+Hello, World!
+</code></pre>
+<p>そうすると上記のようにコマンドを打った直後に <code>Hello, World!</code> という文字が画面に出力されます。</p>
+<h2 id="rustコードの解剖"><a class="header" href="#rustコードの解剖">Rustコードの解剖</a></h2>
+<p>Hello, World! プログラムでいま何が起こったのか詳しく確認しましょう。
+とはいっても打ったのはたった以下の一行のコードだけです。</p>
+<pre><code class="language-python">print("Hello, World!")
+</code></pre>
+<p>ではこれを要素に分解するところで問題です！</p>
+<details id="admonition-何個にどこで分解しますかクリックで解説を開けます" class="admonition admonish-question">
+<summary class="admonition-title">
+<p>何個にどこで分解しますか？(クリックで解説を開けます)</p>
+<p><a class="admonition-anchor-link" href="#admonition-何個にどこで分解しますかクリックで解説を開けます"></a></p>
+</summary>
+<div>
+<p><code>print()</code> と <code>"Hello, World!"</code> という二つに分解できます</p>
+<h3 id="wip"><a class="header" href="#wip">WIP</a></h3>
+<p>ここに関数や引数、文字列だけを教える(あとはおいおいchapterが進んだら)</p>
+</div>
+</details>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch01-01-installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="1.2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -196,13 +236,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch01-01-installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="1.2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
