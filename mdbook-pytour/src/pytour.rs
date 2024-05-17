@@ -21,7 +21,7 @@ impl Pytour {
 
 impl Preprocessor for Pytour {
     fn name(&self) -> &str {
-        "extra-preprocessor"
+        "pytour-preprocessor"
     }
 
     fn supports_renderer(&self, renderer: &str) -> bool {
@@ -48,20 +48,16 @@ pub struct Work {
     work_re: Regex,
 }
 
-const QUESTION_TITLE: &str = "問題";
-const COLLAPSIBLE: bool = true;
-const COLLAPSIBLE_TITLE: &str = "解答例";
-
 fn question_title_default() -> String {
-    QUESTION_TITLE.to_string()
+    "問題".to_string()
 }
 
 fn collapsible_default() -> bool {
-    COLLAPSIBLE
+    true
 }
 
 fn collapsible_title_default() -> String {
-    COLLAPSIBLE_TITLE.to_string()
+    "解答例".to_string()
 }
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
@@ -93,20 +89,13 @@ impl Work {
     }
 
     fn load_config(&self, file: Result<File, Error>) -> WorkConfig {
-        file.map_or_else(
-            |_| WorkConfig::default(),
-            |mut file| {
-                let mut s = String::new();
-                let _ = file.read_to_string(&mut s);
-                serde_yaml::from_str::<WorkConfig>(&s)
-                    .or_else(|_| -> Result<WorkConfig, Error> {
-                        {
-                            Ok(WorkConfig::default())
-                        }
-                    })
-                    .unwrap()
-            },
-        )
+        file.and_then(|mut file| {
+            let mut s = String::new();
+            file.read_to_string(&mut s)?;
+            serde_yaml::from_str(&s)
+                .map_err(|_| Error::new(std::io::ErrorKind::InvalidData, "YAML parsing error"))
+        })
+        .unwrap_or_default()
     }
 
     fn run(&self, chap: &mut Chapter) {
@@ -161,7 +150,7 @@ impl Embed {
     fn run(&self, chap: &mut Chapter) {
         chap.content = self.embed_re.replace_all(&chap.content, |caps: &regex::Captures| {
             let url = caps.name("url").unwrap().as_str();
-            if let Some(cap) = self.youtube_re.captures_iter(&url).next() {
+            if let Some(cap) = self.youtube_re.captures_iter(url).next() {
                 format!("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\"></iframe>", &cap[1])
             } else {
                 format!("<a href=\"{url}\">{url}</a>")
