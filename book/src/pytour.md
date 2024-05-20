@@ -2,6 +2,8 @@
 
 **著: [moriyoshi-kasuga](https://github.com/moriyoshi-kasuga)**
 
+ここでは新しくPythonを学ぼうとするために書いた(もしくは書いている)本です
+
 この本ではPython 3 が使われていることを前提としています。
 Pythonをインストールしたりアップデートするには [第一章の「インストール」](./ch01-01-installation.md) 節をよんでください
 

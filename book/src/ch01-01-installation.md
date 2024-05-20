@@ -13,7 +13,7 @@
 ターミナルを開いて、以下のコマンドを入力することで簡単にインストールができます
 
 ```shell
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/moriyoshi-kasuga/install/HEAD/book/bin/install_python.sh)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/moriyoshi-kasuga/pytour/main/book/src/bin/install_python.sh)"
 ```
 
 このコマンドはスクリプトを入手して、`homebrew` のインストールを開始します。

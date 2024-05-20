@@ -45,6 +45,12 @@ print("Hello, World!")
 
 ```admonish question title="何個にどこで分解しますか？(クリックで解説を開けます)" collapsible=true
 `print()` と `"Hello, World!"` という二つに分解できます
+- `print()` は 関数
+- `"Hello, World!"` は 文字列
+
+とそれぞれいわれるものです。
+
 ### WIP
 ここに関数や引数、文字列だけを教える(あとはおいおいchapterが進んだら)
+あとはdouble quote をなくしたらどんなのがでるとかいって文字列を教える
 ```
